@@ -147,6 +147,7 @@ body {
   color: var(--text-color);
   font-size: 1.6rem;
   font-family: "Gordita", sans-serif;
+  background: var(--body-bg);
 }
 
 a {
@@ -1212,6 +1213,7 @@ html.dark {
   --top-act-group-bg: #292e39;
   --top-act-group-shadow: rgba(0, 0, 0, 0.2);
   --top-act-group-separator: #ededf6;
+  --body-bg: #292e39;
 }
 
 html {
@@ -1222,6 +1224,12 @@ html {
   --top-act-group-bg: #fff;
   --top-act-group-shadow: rgba(237, 237, 246, 0.2);
   --top-act-group-separator: #ededf6;
+  --body-bg: #f6f6f6;
+}
+@media (max-width: 991.98px) {
+  html {
+    --header-bg: #fff;
+  }
 }
 
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .navbar__list, .top-bar {
@@ -1243,6 +1251,7 @@ html {
 }
 @media (max-width: 575.98px) {
   .top-bar {
+    justify-content: space-between;
     padding: 16px 0;
   }
 }
@@ -1284,6 +1293,11 @@ html {
 .top-act {
   column-gap: 20px;
   margin-left: auto;
+}
+@media (max-width: 575.98px) {
+  .top-act {
+    margin-left: 0;
+  }
 }
 .top-act__group {
   min-width: 50px;
@@ -1336,7 +1350,12 @@ html {
 @media (max-width: 991.98px) {
   .logo {
     column-gap: 10px;
-    margin-left: 39px;
+    margin-left: 40px;
+  }
+}
+@media (max-width: 575.98px) {
+  .logo {
+    margin-left: 0;
   }
 }
 .logo__title {
