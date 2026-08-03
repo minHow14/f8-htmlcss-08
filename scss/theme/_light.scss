@@ -11,6 +11,10 @@ html {
   --top-act-group-separator: #ededf6;
   --body-bg: #f6f6f6;
 
+  // Drop down
+  --dropdown-bg: #fff;
+  --dropdown-shadow: rgba(200, 200, 200, 0.4);
+
   @include abstracts.breakpoint(lg) {
     --header-bg: #fff;
   }
