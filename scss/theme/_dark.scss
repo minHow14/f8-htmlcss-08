@@ -18,6 +18,9 @@ html.dark {
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(15%) sepia(10%)
     saturate(1192%) hue-rotate(183deg) brightness(94%) contrast(91%);
 
+  // Menu column
+  --menu-column-heading: #b9babe;
+  --menu-column-link: #b9babe;
   --menu-column-icon: brightness(0) saturate(100%) invert(100%) sepia(19%)
     saturate(1075%) hue-rotate(180deg) brightness(101%) contrast(97%);
 

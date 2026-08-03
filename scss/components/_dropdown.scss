@@ -1,3 +1,4 @@
+@use '../abstracts';
 .dropdown {
   position: absolute;
   left: 0;
@@ -7,10 +8,8 @@
   display: none;
 
   &__inner {
-    --inner-max-height: min(582px, 100vh - 158px);
     --inner-padding: 30px;
     position: relative;
-    max-height: var(--inner-max-height);
     padding: var(--inner-padding);
     border-radius: 20px;
     background: var(--dropdown-bg);
@@ -28,12 +27,14 @@
 }
 
 .top-menu {
-  max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+  --main-column-width: 292px;
+  --max-inner-heigh: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+
+  position: relative;
 
   &__main {
-    width: 292px;
-    height: 100%;
-    max-height: inherit;
+    width: var(--main-column-width);
+    height: var(--max-inner-heigh);
     border-right: 1px solid var(--top-menu-border);
     overflow-y: auto;
   }
@@ -43,17 +44,25 @@
   display: flex;
   column-gap: 14px;
 
+  + .menu-column {
+    margin-top: 20px;
+  }
+
   &__icon {
     position: relative;
     flex-shrink: 0;
     width: 36px;
     height: 36px;
+
+    @include abstracts.breakpoint(xl) {
+      display: none;
+    }
   }
 
   &__icon-1 {
     width: 30px;
     height: 30px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   &__icon-2 {
@@ -62,7 +71,7 @@
     bottom: 0;
     width: 24px;
     height: 24px;
-    object-fit: cover;
+    object-fit: contain;
     filter: var(--menu-column-icon);
   }
 
@@ -71,6 +80,7 @@
   }
 
   &__heading {
+    color: var(--menu-column-heading);
     margin-top: 5px;
     font: {
       size: 1.6rem;
@@ -83,15 +93,44 @@
     margin-top: 19px;
   }
 
+  &__item {
+    &--active .sub-menu {
+      display: grid;
+    }
+  }
+
+  &__item--active > &__link,
+  &__item:hover > &__link {
+    color: #0071dc;
+    font-weight: 500;
+  }
+
   &__link {
+    color: var(--menu-column-link);
     display: block;
     padding: 7px 0;
     font-size: 1.4rem;
     line-height: 1.42;
+  }
+}
 
-    &:hover {
-      color: #0071dc;
-      font-weight: 500;
-    }
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--main-column-width);
+  padding-left: var(--inner-padding);
+
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  overflow-y: auto;
+
+  &--not-main {
+    position: initial;
+    inset: initial;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: var(--max-inner-heigh);
+    padding-left: 0;
   }
 }
