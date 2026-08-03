@@ -14,8 +14,10 @@ html {
   // Drop down
   --dropdown-bg: #fff;
   --dropdown-shadow: rgba(200, 200, 200, 0.4);
+  --top-menu-border: #d2d1d6;
 
   @include abstracts.breakpoint(lg) {
     --header-bg: #fff;
+    --header-shadow: rgba(237, 237, 246, 0.2);
   }
 }
