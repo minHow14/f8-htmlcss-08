@@ -1,7 +1,7 @@
 <div class="container">
   <div class="top-bar">
     <!-- More -->
-    <button class="top-bar__more">
+    <button class="top-bar__more js-toggle d-none d-lg-block" toggle-target="#navbar">
       <img src="./assets/icons/more.svg" alt="" class="icon top-bar__more-icon" />
     </button>
 
@@ -12,12 +12,29 @@
     </a>
 
     <!-- Navbar -->
-    <nav class="navbar">
+
+    <nav id="navbar" class="navbar show">
+      <button class="navbar__close-btn icon-dark js-toggle d-lg-block d-none" toggle-target="#navbar">
+        <img src="./assets/icons/back-arrow.svg" alt="" />
+      </button>
+
+      <a href="" class="nav-btn icon-dark d-none d-md-flex">
+        <img src="./assets/icons/cart.svg" alt="" class="nav-btn__icon" />
+        <span class="nav-btn__title">Card</span>
+        <span class="nav-btn__qnt">3</span>
+      </a>
+
+      <a href="" class="nav-btn d-none d-md-flex">
+        <img src="./assets/icons/heart.svg" alt="" class="nav-btn__icon" />
+        <span class="nav-btn__title">Favorite</span>
+        <span class="nav-btn__qnt">3</span>
+      </a>
+
       <ul class="navbar__list js-dropdown-list">
         <li class="navbar__item">
           <a href="#!" class="navbar__link">
             Departments
-            <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
+            <img src="./assets/icons/arrow-down.svg" alt="" class="icon-dark navbar__arrow" />
           </a>
           <div class="dropdown js-dropdown">
             <div class="dropdown__inner">
@@ -25,12 +42,12 @@
                 <div class="top-menu__main">
                   <!-- Menu column -->
                   <div class="menu-column">
-                    <div class="menu-column__icon">
+                    <div class="menu-column__icon d-lg-none">
                       <img src="./assets/img/category/cate-1.1.svg" alt="" class="menu-column__icon-1" />
                       <img src="./assets/img/category/cate-1.2.svg" alt="" class="menu-column__icon-2" />
                     </div>
                     <div class="menu-column__content">
-                      <h2 class="menu-column__heading">All Departments</h2>
+                      <h2 class="menu-column__heading d-lg-none">All Departments</h2>
                       <ul class="menu-column__list js-menu-list">
                         <li class="menu-column__item">
                           <a href="#!" class="menu-column__link"> Savings & Featured Shops </a>
@@ -2171,7 +2188,7 @@
         <li class="navbar__item">
           <a href="#!" class="navbar__link">
             Grocery
-            <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
+            <img src="./assets/icons/arrow-down.svg" alt="" class="icon-dark navbar__arrow" />
           </a>
           <div class="dropdown js-dropdown">
             <div class="dropdown__inner">
@@ -2422,7 +2439,7 @@
         <li class="navbar__item">
           <a href="#!" class="navbar__link">
             Beauty
-            <img src="./assets/icons/arrow-down.svg" alt="" class="icon navbar__arrow" />
+            <img src="./assets/icons/arrow-down.svg" alt="" class="icon-dark navbar__arrow" />
           </a>
           <div class="dropdown js-dropdown">
             <div class="dropdown__inner">
@@ -2630,16 +2647,18 @@
       </ul>
     </nav>
 
+    <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
+
     <!-- Action buttons -->
     <div class="top-act">
       <!-- Search -->
-      <div class="top-act__group top-act__group--single">
+      <div class="top-act__group top-act__group--single d-lg-none">
         <button class="top-act__btn">
           <img src="./assets/icons/search.svg" alt="search-icon" class="icon top-act__icon" />
         </button>
       </div>
       <!-- Group btn -->
-      <div class="top-act__group">
+      <div class="top-act__group d-md-none">
         <button class="top-act__btn">
           <img src="./assets/icons/heart.svg" alt="heart-icon" class="icon top-act__icon" />
           <span class="top-act__title">03</span>

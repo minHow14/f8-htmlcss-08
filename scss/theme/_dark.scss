@@ -1,8 +1,8 @@
 @use '../abstracts';
 html.dark {
   --text-color: #fff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(8%)
-    saturate(248%) hue-rotate(182deg) brightness(119%) contrast(100%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(8%) saturate(248%) hue-rotate(182deg) brightness(119%)
+    contrast(100%);
 
   --header-bg: #171c28;
 
@@ -15,15 +15,23 @@ html.dark {
   --dropdown-bg: #292e39;
   --dropdown-shadow: rgba(23, 28, 40, 0.4);
   --top-menu-border: #171c28;
-  --dropdown-arrow-color: brightness(0) saturate(100%) invert(15%) sepia(10%)
-    saturate(1192%) hue-rotate(183deg) brightness(94%) contrast(91%);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(15%) sepia(10%) saturate(1192%) hue-rotate(183deg)
+    brightness(94%) contrast(91%);
 
   // Menu column
   --menu-column-heading: #b9babe;
   --menu-column-link: #b9babe;
-  --menu-column-icon: brightness(0) saturate(100%) invert(100%) sepia(19%)
-    saturate(1075%) hue-rotate(180deg) brightness(101%) contrast(97%);
+  --menu-column-icon: brightness(0) saturate(100%) invert(100%) sepia(19%) saturate(1075%) hue-rotate(180deg)
+    brightness(101%) contrast(97%);
 
+  // Sidebar
+  --sidebar_link: #b9babe;
+  --sidebar-bg: #292e39;
+  --icon-dark: brightness(0) saturate(100%) invert(90%) sepia(0%) saturate(7457%) hue-rotate(287deg) brightness(86%)
+    contrast(79%);
+  --sidebar-title: #b9babe;
+  --sidebar-qnt: #b9babe;
+  --sidebar-shadow: rgba(23, 28, 40, 0.4);
   @include abstracts.breakpoint(lg) {
     --header-shadow: rgba(0, 0, 0, 0.2);
   }

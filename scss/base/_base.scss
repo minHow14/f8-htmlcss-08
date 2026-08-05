@@ -20,6 +20,8 @@ a {
   text-decoration: none;
 }
 
+a,
+img,
 button,
 textarea,
 select,
@@ -27,6 +29,7 @@ input {
   font-family: inherit;
   color: inherit;
   font-size: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -37,4 +40,8 @@ button {
 
 .icon {
   filter: var(--icon-color);
+}
+
+.icon-dark {
+  filter: var(--icon-dark);
 }
