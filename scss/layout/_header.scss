@@ -8,7 +8,7 @@
 .header {
   background: var(--header-bg);
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     box-shadow: 0 20px 60px 10px var(--header-shadow);
   }
 }
@@ -17,12 +17,13 @@
   @extend %flexItemsCenter;
   padding: 30px 0;
   position: relative;
+  z-index: 1;
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     padding: 20px 0;
   }
 
-  @include abstracts.breakpoint(md) {
+  @include abstracts.screen(md) {
     justify-content: space-between;
     padding: 16px 0;
   }
@@ -31,11 +32,11 @@
 .navbar {
   margin-left: 139px;
 
-  @include abstracts.breakpoint(xl) {
+  @include abstracts.screen(xl) {
     margin-left: 28px;
   }
 
-  @include abstracts.breakpoint(lg) {
+  @include abstracts.screen(lg) {
     position: fixed;
     inset: 0 50% 0 0;
     z-index: 9;
@@ -59,38 +60,24 @@
     }
   }
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     inset: 0 20% 0 0;
   }
 
   &__close-btn {
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       padding: 10px 40px;
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       padding: 0 20px 10px;
-    }
-  }
-
-  &__overlay {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity, visibility;
-    transition-duration: 0.5s;
-
-    @include abstracts.breakpoint(lg) {
-      position: fixed;
-      inset: 0;
-      z-index: 8;
-      background: rgba($color: #000000, $alpha: 0.2);
     }
   }
 
   &__list {
     @extend %flexItemsCenter;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       flex-direction: column;
       align-items: flex-start;
       overflow-y: auto;
@@ -98,12 +85,30 @@
       height: calc(100% - 40px);
     }
 
-    @include abstracts.breakpoint(md) {
+    @include abstracts.screen(md) {
       height: calc(100% - 142px);
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       height: calc(100% - 124px);
+    }
+  }
+
+  &__item {
+    &:hover .dropdown {
+      display: block;
+    }
+
+    @include abstracts.screen(lg) {
+      width: 100%;
+
+      &:hover .dropdown {
+        display: none;
+      }
+
+      &--active .dropdown {
+        display: block !important;
+      }
     }
   }
 
@@ -120,18 +125,18 @@
     }
     line-height: 1.46;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       justify-content: space-between;
       padding: 0 40px;
       font-size: 1.6rem;
       line-height: 1.5;
     }
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       padding: 0 20px;
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       height: 44px;
     }
   }
@@ -139,30 +144,29 @@
   &__arrow {
     margin-top: 3px;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
       rotate: -90deg;
       transition: rotate 0.3s;
     }
   }
 
-  &__item-active &__arrow {
-    rotate: 0deg;
+  &__item--active &__arrow {
+    @include abstracts.screen(lg) {
+      rotate: 0deg;
+    }
   }
 
-  &__item {
-    &:hover .dropdown {
-      display: block;
-    }
-    @include abstracts.breakpoint(lg) {
-      width: 100%;
+  &__overlay {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity, visibility;
+    transition-duration: 0.5s;
 
-      &:hover .dropdown {
-        display: none;
-      }
-
-      &--active .dropdown {
-        display: block !important;
-      }
+    @include abstracts.screen(lg) {
+      position: fixed;
+      inset: 0;
+      z-index: 8;
+      background: rgba($color: #000000, $alpha: 0.2);
     }
   }
 }
@@ -172,7 +176,7 @@
   column-gap: 20px;
   margin-left: auto;
 
-  @include abstracts.breakpoint(md) {
+  @include abstracts.screen(md) {
     margin-left: 0;
   }
 
@@ -187,15 +191,15 @@
     box-shadow: 0px 20px 60px 10px var(--top-act-group-shadow);
   }
 
-  &__group--single &__btn {
-    padding: 13px;
-  }
-
   &__btn {
     @extend %flexItemsCenter;
     padding: 13px 20px;
     column-gap: 10px;
     cursor: pointer;
+  }
+
+  &__group--single &__btn {
+    padding: 13px;
   }
 
   &__separator {
@@ -226,7 +230,7 @@
   padding: 0 40px;
   align-items: center;
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     height: 44px;
     padding: 0 20px;
   }
